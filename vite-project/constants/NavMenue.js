@@ -1,20 +1,21 @@
 const navMenue = [
     {
         label:"Home",
-        route:"#"
+        route:"/"
     },
     {
         label:"Contact",
-        route:"#"
+        route:"/Contact"
     },
         {
         label:"About",
-        route:"#"
+        route:"/About"
     },
     {
-        label:"Gallery",
-        route:"#"
-    }    
+        label:"Products",
+        route:"/Products"
+    },   
+
 ]
 
 export default navMenue;

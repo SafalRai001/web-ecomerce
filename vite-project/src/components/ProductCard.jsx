@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Card({title,name,category, price}) {
+function ProductCard({title,name,category, price}) {
 
 
   return (
-    <div className='mx-3 my-5 bg-slate-200  h-48 text-center rounded-xl'>
+    <div className='mx-3 my-5 bg-slate-200 h-48 text-center rounded-xl'>
       <h1 className="text-4xl font-bold ">{title}</h1>
       <p className='text-2xl'>{name}</p>
       <p>{category}</p>
@@ -14,4 +14,4 @@ function Card({title,name,category, price}) {
   )
 }
 
-export default Card
+export default ProductCard

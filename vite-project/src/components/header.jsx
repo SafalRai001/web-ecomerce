@@ -1,5 +1,6 @@
 import React from 'react'
 import navMenue from '../../constants/NavMenue'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
@@ -9,7 +10,7 @@ function Header() {
     <nav>
         {navMenue.map((menu)=>
             (
-                <a href={menu.route} className="m-3 font-bold hover:underline text-xl no-underline " >{menu.label}</a>  
+                <Link key={menu.label} to={menu.route} className="m-3 font-bold hover:underline text-xl no-underline " >{menu.label}</Link>  
             )
         )}
            

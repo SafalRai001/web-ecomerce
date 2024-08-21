@@ -1,30 +1,36 @@
-import { useEffect } from "react";
-import { useState } from "react";
 
-import ProductCard from "./components/ProductCard";
-import HeroSection from "./components/hero";
-import Header from './components/header';
-import products from "../constants/product";
+import  { createBrowserRouter,createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+
+import Home from '../pages/Home';
+import Contact from '../pages/Contact';
+import About from '../pages/About';
+import Products from '../pages/Products';
+import MainLayout from '../layout/mainLayout';
+import testy1 from '../pages/test';
+
+function App() {
+  const router = createBrowserRouter(
+    createRoutesFromElements(<Route path="/" element={<MainLayout/>}>
+        <Route index element={<Home />} />
+        <Route path='/Contact'
+         element={<Contact/>}/>
+
+        <Route path='/About' 
+        element={<About/>}/>
+
+        <Route path='/Products' 
+        element={<Products/>}/>
+
+        <Route path='/test'
+        element = {<testy1/>}/>
+
+    </Route>));
 
 
-
-
-let Message = function(){
-  return(
-    <>
-    <Header/>
-    <HeroSection/>
-    <div className="grid grid-cols-3 box-border text-center mx-3">
-      {products.map((detail)=>{
-        return(<ProductCard title={detail.title} name={detail.name} price={detail.price} category={detail.category}/>)
-      })}
-     
-
-    </div>
-    <HeroSection/>
-    </>
-  )
-   
+  return <RouterProvider router= {router}/>
 }
 
-export default Message;
+export default App
+
+
+
